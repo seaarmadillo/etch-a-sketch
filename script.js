@@ -1,3 +1,7 @@
+// Remove margin and padding from the body
+document.body.style.margin = "0";
+document.body.style.padding = "0";
+
 // Create a div element with flexbox properties
 const grid = document.createElement("div");
 grid.classList.add("grid");
@@ -18,7 +22,7 @@ for (let i = 0; i < (window.innerWidth / 16) * (window.innerHeight / 16); i++) {
     const item = document.createElement("div");
  
    
-    item.style.border = ".5px solid #000";
+    item.style.border = "0px solid #000";
     item.style.boxSizing = "border-box";
     item.style.margin = "0";
     item.style.textAlign = "center";
@@ -26,6 +30,13 @@ for (let i = 0; i < (window.innerWidth / 16) * (window.innerHeight / 16); i++) {
     item.style.height = "16px"; 
     grid.appendChild(item);
 
+//add hover effect
+    item.addEventListener("mouseover",(e) => {
+        item.style.backgroundColor = "#ffc7c0";
+});
+
+    grid.appendChild(item);
 }
 // Append the grid element to the body
 document.body.appendChild(grid); 
+
