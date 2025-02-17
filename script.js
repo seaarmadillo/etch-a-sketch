@@ -6,23 +6,24 @@ document.body.style.padding = "0";
 const grid = document.createElement("div");
 grid.classList.add("grid");
 
+grid.style.border = "1px solid #000";
+grid.style.margin = "0 auto";
+
 grid.style.display = "flex";
 grid.style.flexWrap = "wrap";
-grid.style.justifyContent = "center";
-grid.style.alignItems = "center";
 
 
-grid.style.width = "100vw";
-grid.style.height = "100vh";
+grid.style.width = "960px";
+grid.style.height = "960px";
 
+
+const numItems = (960 / 16) * (960 / 16);
 
 // Create div elements with flexbox properties
 
-for (let i = 0; i < (window.innerWidth / 16) * (window.innerHeight / 16); i++) { 
+for (let i = 0; i < numItems; i++) { 
     const item = document.createElement("div");
- 
-   
-    item.style.border = "0px solid #000";
+    item.style.border = "0.5 px solid #000";
     item.style.boxSizing = "border-box";
     item.style.margin = "0";
     item.style.textAlign = "center";
@@ -32,7 +33,7 @@ for (let i = 0; i < (window.innerWidth / 16) * (window.innerHeight / 16); i++) {
 
 //add hover effect
     item.addEventListener("mouseover",(e) => {
-        item.style.backgroundColor = "#ffc7c0";
+        item.style.backgroundColor = "#000";
 });
 
     grid.appendChild(item);
